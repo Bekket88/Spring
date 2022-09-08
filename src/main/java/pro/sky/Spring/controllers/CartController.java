@@ -9,7 +9,7 @@ import pro.sky.Spring.services.CartService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/store/order/")
+@RequestMapping(path = "/order")
 
 public class CartController {
     private final CartService cartService;
@@ -18,12 +18,12 @@ public class CartController {
         this.cartService = cartService;
     }
 
-    @GetMapping(path = "add")
+    @GetMapping(path = "/add")
     public List<Integer> addItems(@RequestParam List<Integer> itemIds) {
         return cartService.addItems(itemIds);
     }
 
-    @GetMapping(path = "get")
+    @GetMapping(path = "/get")
     public List<Integer> getItems() {
         return cartService.getItems();
     }
